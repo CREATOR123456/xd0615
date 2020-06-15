@@ -9,3 +9,4 @@ GitHub操作流程：
 8. 使用git push命令将本地项目更新提交到github。
 
 一些命令：git init(初始化)
+进指定库：cd xd0615

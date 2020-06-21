@@ -12,21 +12,21 @@
 #define BT 7
 void setup()
 {
-  pinMode(IN1, OUTPUT);//è¾“å…¥1
-  pinMode(IN2, OUTPUT);//è¾“å…¥2
-  pinMode(IN3, OUTPUT);//è¾“å…¥3
-  pinMode(IN4, OUTPUT);//è¾“å…¥4
-  pinMode(S1, OUTPUT);//ç‰‡é€‰1
-  pinMode(S2, OUTPUT);//ç‰‡é€‰2
-  pinMode(S3, OUTPUT);//ç‰‡é€‰3
-  pinMode(S4, OUTPUT);//ç‰‡é€‰4
-  
-  pinMode(LT,OUTPUT);//æµ‹è¯•
-  pinMode(BT,OUTPUT);//æ¶ˆéš
-  
+  pinMode(IN1, OUTPUT);//ÊäÈë1
+  pinMode(IN2, OUTPUT);//ÊäÈë2
+  pinMode(IN3, OUTPUT);//ÊäÈë3
+  pinMode(IN4, OUTPUT);//ÊäÈë4
+  pinMode(S1, OUTPUT);//Æ¬Ñ¡1
+  pinMode(S2, OUTPUT);//Æ¬Ñ¡2
+  pinMode(S3, OUTPUT);//Æ¬Ñ¡3
+  pinMode(S4, OUTPUT);//Æ¬Ñ¡4
+
+  pinMode(LT,OUTPUT);//²âÊÔ
+  pinMode(BT,OUTPUT);//ÏûÒþ
+
   digitalWrite(LT,HIGH);
   digitalWrite(BT,HIGH);
-  
+
   digitalWrite(S1,HIGH);
   digitalWrite(S2,HIGH);
   digitalWrite(S3,HIGH);
@@ -38,12 +38,12 @@ byte income=0;
 byte temp[4];
 String abc="";
 void loop()
-{   
+{
  while(Serial.available()>0)
  {
    abc+=char(Serial.read());
    delay(3);
-  
+
   for(int i=0;i<4;i++)
   {
     temp[i]=int(abc[i]);
@@ -51,16 +51,16 @@ void loop()
     switch (i)
     {
       case 0:
-        digitalWrite(S1,LOW);   
+        digitalWrite(S1,LOW);
       case 1:
       digitalWrite(S2,LOW);
       case 2:
       digitalWrite(S3,LOW);
- 
+
       case 3:
-      digitalWrite(S4,LOW);  
+      digitalWrite(S4,LOW);
     };
-     income=temp[i]-'0';  
+     income=temp[i]-'0';
      digitalWrite(2,income&0x1);
     digitalWrite(3,(income>>1)&0x1);
     digitalWrite(4,(income>>2)&0x1);
@@ -70,7 +70,7 @@ void loop()
     digitalWrite(S3,HIGH);
     digitalWrite(S4,HIGH);
     delay(4);
-  }  
+  }
  }
-     abc=""; 
-}   
+     abc="";
+}

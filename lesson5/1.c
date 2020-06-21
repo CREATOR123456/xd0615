@@ -10,16 +10,16 @@
 #define BT 7
 void setup()
 {
-  pinMode(IN1, OUTPUT);//è¾“å…¥1
-  pinMode(IN2, OUTPUT);//è¾“å…¥2
-  pinMode(IN3, OUTPUT);//è¾“å…¥3
-  pinMode(IN4, OUTPUT);//è¾“å…¥4
-  pinMode(S1, OUTPUT);//ç‰‡é€‰1
-  pinMode(S2, OUTPUT);//ç‰‡é€‰2
-  pinMode(S3, OUTPUT);//ç‰‡é€‰3
-  pinMode(S4, OUTPUT);//ç‰‡é€‰4
-  pinMode(LT,OUTPUT);//æµ‹è¯•
-  pinMode(BT,OUTPUT);//æ¶ˆéš
+  pinMode(IN1, OUTPUT);//ÊäÈë1
+  pinMode(IN2, OUTPUT);//ÊäÈë2
+  pinMode(IN3, OUTPUT);//ÊäÈë3
+  pinMode(IN4, OUTPUT);//ÊäÈë4
+  pinMode(S1, OUTPUT);//Æ¬Ñ¡1
+  pinMode(S2, OUTPUT);//Æ¬Ñ¡2
+  pinMode(S3, OUTPUT);//Æ¬Ñ¡3
+  pinMode(S4, OUTPUT);//Æ¬Ñ¡4
+  pinMode(LT,OUTPUT);//²âÊÔ
+  pinMode(BT,OUTPUT);//ÏûÒþ
   digitalWrite(LT,HIGH);
   digitalWrite(BT,HIGH);
   digitalWrite(S1,HIGH);
@@ -34,7 +34,7 @@ void loop()
    if(Serial.available()>0)
   {
   	income=Serial.read();
-    
+
     income=income-'0';
     digitalWrite(S1,LOW);
     digitalWrite(2,income&0x1);
